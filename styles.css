@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Contenedor del candado */
+.lock-container {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px 20px;
+    border-radius: 24px;
+    text-align: center;
+    width: 90%;
+    max-width: 380px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s ease;
+}
+
+.header-badge {
+    background: rgba(244, 63, 94, 0.15);
+    color: #fb7185;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.lock-icon {
+    position: relative;
+    margin: 0 auto 15px auto;
+    width: 60px;
+    height: 70px;
+}
+
+.lock-shackle {
+    width: 36px;
+    height: 30px;
+    border: 5px solid #fb7185;
+    border-bottom: none;
+    border-radius: 20px 20px 0 0;
+    position: absolute;
+    top: 0;
+    left: 12px;
+    transition: transform 0.3s ease;
+}
+
+.lock-container.unlocked .lock-shackle {
+    transform: translateY(-8px) rotate(-15deg);
+}
+
+.lock-body {
+    width: 60px;
+    height: 50px;
+    background: #fb7185;
+    border-radius: 12px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 5px 15px rgba(251, 113, 133, 0.4);
+}
+
+.lock-container h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Ruedas de combinación */
+.combination-wheels {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.wheel-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 8px;
+}
+
+.wheel-btn {
+    background: none;
+    border: none;
+    color: #fb7185;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px;
+    transition: transform 0.1s;
+}
+
+.wheel-btn:active {
+    transform: scale(0.9);
+}
+
+.digit {
+    font-size: 28px;
+    font-weight: 700;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.status-text {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 20px;
+    min-height: 20px;
+}
+
+.unlock-btn {
+    background: linear-gradient(135deg, #fb7185, #e11d48);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(225, 29, 72, 0.3);
+    transition: opacity 0.2s;
+}
+
+.unlock-btn:active {
+    opacity: 0.85;
+}
+
+/* Pantalla de sorpresa oculta */
+.surprise-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0f172a;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.surprise-content {
+    position: relative;
+    z-index: 11;
+    text-align: center;
+    padding: 20px;
+}
+
+.surprise-content h1 {
+    font-size: 26px;
+    color: #fb7185;
+    margin-bottom: 10px;
+}
+
+.surprise-content p {
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.polaroid-card {
+    background: white;
+    padding: 15px 15px 25px 15px;
+    border-radius: 8px;
+    color: #0f172a;
+    width: 200px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transform: rotate(3deg);
+}
+
+.photo-placeholder {
+    width: 170px;
+    height: 170px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.polaroid-card p {
+    color: #475569;
+    font-size: 12px;
+    margin: 0;
+    font-weight: 600;
+}

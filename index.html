@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candado Secreto | CodeArt</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="lock-container" id="lockContainer">
+        <div class="header-badge">Para una persona especial 🤍</div>
+  
+        <div class="lock-icon" id="lockIcon">
+            <div class="lock-shackle" id="shackle"></div>
+            <div class="lock-body">
+                <span>🔒</span>
+            </div>
+        </div>
+
+        <h2>Ingresa nuestra combinación</h2>
+
+        <div class="combination-wheels">
+            <div class="wheel-box">
+                <button class="wheel-btn" onclick="changeDigit(0, 1)">▲</button>
+                <div class="digit" id="digit-0">0</div>
+                <button class="wheel-btn" onclick="changeDigit(0, -1)">▼</button>
+            </div>
+            <div class="wheel-box">
+                <button class="wheel-btn" onclick="changeDigit(1, 1)">▲</button>
+                <div class="digit" id="digit-1">0</div>
+                <button class="wheel-btn" onclick="changeDigit(1, -1)">▼</button>
+            </div>
+            <div class="wheel-box">
+                <button class="wheel-btn" onclick="changeDigit(2, 1)">▲</button>
+                <div class="digit" id="digit-2">0</div>
+                <button class="wheel-btn" onclick="changeDigit(2, -1)">▼</button>
+            </div>
+        </div>
+
+        <p class="status-text" id="status">Ingresa la combinación secreta</p>
+        
+        <button class="unlock-btn" onclick="checkCombination()">Desbloquear</button>
+    </div>
+
+    <div class="surprise-container" id="surpriseContainer">
+        <canvas id="canvas"></canvas>
+        <div class="surprise-content">
+            <h1>¡Acceso Concedido! ✨</h1>
+            <p>Este detalle fue creado especialmente para ti.</p>
+            <div class="polaroid-card">
+                <div class="photo-placeholder">❤️</div>
+                <p>Nuestros mejores momentos</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
